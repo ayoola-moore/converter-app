@@ -22,9 +22,15 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## System requirement
+The application was built on
+```
+node v16.13.0
+```
+
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) This app was built using nest framework.
 
 ## Installation
 
@@ -41,8 +47,54 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 
-# production mode
-$ npm run start:prod
+```
+
+## End points
+
+```
+# for Json conversion
+http://localhost:3000/convert/json
+
+# for xml conversion
+http://localhost:3000/convert/xml
+
+# for text conversion
+http://localhost:3000/convert/txt
+```
+
+## Swagger Url
+
+```
+http://localhost:3000/api
+```
+
+## Sample curl commands
+Replace `<userpath>` with your appropriate path on your computer. Eg  - `/Users/ayoola/converter-app/sample_files/`
+```
+curl -X POST \
+  'http://localhost:3000/convert/json' \
+  --header 'Accept: */*' \
+  --form 'separator="*"' \
+  --form 'delimiter="~"' \
+  --form 'file=@<userpath>/sample_files/sample-txt.txt>'
+```
+
+```
+curl -X POST \
+  'http://localhost:3000/convert/xml' \
+  --header 'Accept: */*' \
+  --form 'separator="*"' \
+  --form 'delimiter="~"' \
+  --form 'file=@<userpath>/sample_files/sample-txt.txt>'
+```
+
+```
+curl -X POST \
+  'http://localhost:3000/convert/txt' \
+  --header 'Accept: */*' \
+  --form 'separator="*"' \
+  --form 'delimiter="~"' \
+  --form 'file=@<userpath>/sample_files/sample-json.json>'
 ```
 
 ## Test
@@ -51,22 +103,7 @@ $ npm run start:prod
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
